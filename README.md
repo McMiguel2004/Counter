@@ -1,39 +1,13 @@
-#!/bin/bash
+Counter
 
-# Nombre del proyecto
-PROJECT_NAME="Counter"
+  
 
-# Crear el archivo README.md y escribir el contenido
-cat <<EOL > README.md
-# $PROJECT_NAME
+📌 Descripción
 
-![Counter Logo](assets/imagenes_productos/logo.png)
+Counter es una aplicación web dinámica desarrollada en PHP que permite la gestión, visualización y edición de datos extraídos mediante web scraping con Selenium y Python. El proyecto incluye autenticación segura con JWT, un panel de administración protegido y soporte para múltiples idiomas.
 
-## Descripción
+📁 Estructura del Proyecto
 
-$PROJECT_NAME es una aplicación web dinámica desarrollada en PHP que permite gestionar, visualizar y editar datos obtenidos mediante técnicas de web scraping con Selenium en Python. El proyecto incorpora autenticación segura mediante tokens JWT, un panel de administración protegido y soporte para múltiples idiomas, garantizando una experiencia de usuario moderna y responsiva gracias al uso de Bootstrap y TWIG.
-
-## Tecnologías Utilizadas
-
-- **Front-end:** Bootstrap, TWIG
-- **Back-end:** PHP, autenticación con JWT
-- **Base de Datos:** MySQL
-- **Scraping de Datos:** Selenium con Python
-- **Internacionalización:** Gettext
-- **Visualización de Datos:** Chart.js, Google Maps / OpenStreetMap
-
-## Características Principales
-
-- **Autenticación Segura:** Implementación de autenticación mediante JWT, asegurando que solo usuarios autorizados puedan acceder al panel de administración y gestionar datos sensibles.
-- **Scraping de Datos:** Uso de Selenium en Python para extraer datos de fuentes externas, que luego se almacenan en la base de datos para su gestión y visualización.
-- **Panel de Administración:** Interfaz protegida para la gestión de productos, permitiendo la edición, actualización y eliminación de datos de manera sencilla.
-- **Internacionalización:** Soporte para múltiples idiomas (español e inglés) utilizando la biblioteca Gettext, facilitando la adaptación de la aplicación a diferentes regiones.
-- **Visualización de Datos:** Integración de librerías como Chart.js y servicios de mapas como Google Maps o OpenStreetMap para representar la información de manera gráfica y geolocalizada.
-- **Arquitectura Modular:** Estructura del código organizada en módulos claros y separados, facilitando la mantenibilidad y escalabilidad del proyecto.
-
-## Estructura del Proyecto
-
-\`\`\`
 Counter/
 ├── src/
 │   ├── Graficas/
@@ -66,87 +40,83 @@ Counter/
 ├── api/
 │   └── auth.php
 └── vendor/
-\`\`\`
 
-## Instalación y Configuración
+🚀 Funcionalidades Principales
 
-### 1. Clonar el Repositorio
+Autenticación con JWT: Inicio de sesión seguro con persistencia de sesión mediante cookies y sesiones.
 
-\`\`\`bash
+Scraping con Selenium y Python: Extracción automatizada de datos desde una web pública.
+
+Internacionalización: Soporte para múltiples idiomas (Español e Inglés).
+
+Panel de Administración: Gestión de datos scrapeados con control de usuarios autenticados.
+
+Front-end moderno: Implementado con Bootstrap y Twig para un diseño responsive y dinámico.
+
+Gráficos y visualización: Integración de gráficos dinámicos con Chart.js u otra librería similar.
+
+🛠️ Tecnologías Utilizadas
+
+Back-end: PHP 8, JWT para autenticación.
+
+Front-end: Bootstrap 5, Twig para plantillas dinámicas.
+
+Base de datos: MySQL.
+
+Scraping: Python con Selenium.
+
+Internacionalización: JSON y gettext.
+
+Gráficos: Chart.js, GoogleMaps, OpenStreetMap.
+
+⚙️ Instalación y Configuración
+
+📌 Requisitos Previos
+
+PHP 8.0+
+
+Composer
+
+MySQL
+
+Python 3 y Selenium
+
+Servidor web (Apache o Nginx)
+
+📥 Instalación
+
+Clona el repositorio:
+
 git clone https://github.com/McMiguel2004/Counter.git
 cd Counter
-\`\`\`
 
-### 2. Configurar la Base de Datos
+Instala las dependencias de PHP:
 
-- Crear una base de datos en MySQL.
-- Importar el archivo \`db/schema.sql\` que contiene la estructura de las tablas.
-- Editar el archivo \`db/conexion.php\` con las credenciales de acceso a la base de datos.
-
-### 3. Configurar el Servidor
-
-Asegúrate de tener instalado un servidor web como Apache y PHP. Configura un host virtual para \`Counter\` en \`/var/www/html/\` o utiliza soluciones como XAMPP o LAMP.
-
-### 4. Instalar Dependencias
-
-Ejecuta Composer para instalar las dependencias necesarias, incluyendo la biblioteca para JWT:
-
-\`\`\`bash
 composer install
-\`\`\`
 
-### 5. Configurar Variables de Entorno
+Configura la base de datos en db/conexion.php.
 
-Crea un archivo \`.env\` en la raíz del proyecto con las siguientes variables:
+Configura las claves JWT en includes/jwt.php.
 
-\`\`\`
-DB_HOST=localhost
-DB_USER=usuario
-DB_PASS=contraseña
-DB_NAME=counter
-JWT_SECRET=clave_secreta
-\`\`\`
+Ejecuta el script de scraping en Python:
 
-### 6. Ejecutar el Script de Scraping
+python scraping.py
 
-Ejecuta el script de scraping desarrollado en Python para extraer y almacenar los datos en la base de datos:
+Inicia el servidor web y accede a http://localhost/counter.
 
-\`\`\`bash
-python3 scraping.py
-\`\`\`
+🔒 Seguridad
 
-## Uso del Proyecto
+Uso de JWT para autenticación.
 
-1. **Página Principal:** Accede a la página principal para visualizar los productos obtenidos mediante scraping.
-2. **Registro e Inicio de Sesión:** Regístrate e inicia sesión para acceder a funcionalidades adicionales.
-3. **Panel de Administración:** Gestiona los productos desde el panel de administración, disponible solo para usuarios autenticados.
-4. **Cambio de Idioma:** Cambia el idioma de la interfaz entre español e inglés según tu preferencia.
-5. **Visualización de Datos:** Explora las representaciones gráficas y mapas disponibles para una mejor comprensión de la información.
+Restricción de acceso al panel de administración.
 
-## Capturas de Pantalla
+Gestión segura de sesiones y cookies.
 
-![Página Principal](assets/imagenes_productos/home.png)
-*Figura 1: Vista de la página principal mostrando los productos.*
+📜 Licencia
 
-![Panel de Administración](assets/imagenes_productos/admin.png)
-*Figura 2: Panel de administración para la gestión de productos.*
+Este proyecto está bajo la licencia MIT. Puedes ver más detalles en el archivo LICENSE.
 
-## Contribuciones
+✉️ Contacto
 
-Si deseas contribuir al proyecto, sigue estos pasos:
+Proyecto desarrollado por McMiguel2004. Para dudas o sugerencias, abre un issue o contáctame directamente.
 
-1. Realiza un **fork** del repositorio.
-2. Crea una nueva rama con la funcionalidad o mejora que deseas implementar.
-3. Envía un **pull request** detallando los cambios realizados.
-
-## Licencia
-
-Este proyecto está licenciado bajo la Licencia MIT. Consulta el archivo \`LICENSE\` para más detalles.
-
----
-
-**Desarrollado por [McMiguel2004](https://github.com/McMiguel2004)** 🚀
-EOL
-
-# Mensaje de confirmación
-echo "README.md ha sido generado exitosamente."
