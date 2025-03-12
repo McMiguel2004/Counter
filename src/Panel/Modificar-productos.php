@@ -11,7 +11,7 @@ $usuarioAutenticado = null;
 
 if (isset($_COOKIE['token'])) {
     $usuarioData = verificarJWT($_COOKIE['token']);
-    
+
     if ($usuarioData) {
         $usuarioId = $usuarioData['id'];
 
@@ -57,11 +57,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && empty($_POST['buscar_id'])) {
 
     try {
         // Crear la consulta SQL para actualizar el producto
-        $query = "UPDATE Productos SET 
-                    Nombre = COALESCE(:nombre, Nombre), 
-                    Precio = COALESCE(:precio, Precio), 
-                    PrecisionValue = COALESCE(:precision, PrecisionValue), 
-                    Estado = COALESCE(:estado, Estado) 
+        $query = "UPDATE Productos SET
+                    Nombre = COALESCE(:nombre, Nombre),
+                    Precio = COALESCE(:precio, Precio),
+                    PrecisionValue = COALESCE(:precision, PrecisionValue),
+                    Estado = COALESCE(:estado, Estado)
                   WHERE id = :id";
 
         $stmt = $pdo->prepare($query);
@@ -81,7 +81,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && empty($_POST['buscar_id'])) {
     }
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -96,12 +95,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && empty($_POST['buscar_id'])) {
 <div class="container">
     <h1 class="mt-5">Gestión de Productos</h1>
 
-<form method="POST" class="mb-4">
-    <div class="input-group">
-        <input type="number" name="buscar_id" class="form-control" placeholder="Buscar por ID" value="<?php echo $idBusqueda; ?>" style="color: white; background-color: #444;">
-        <button type="submit" class="btn btn-secondary" style="color: white; background-color: #555; border: 1px solid #888;">Buscar</button>
-    </div>
-</form>
+    <form method="POST" class="mb-4">
+        <div class="input-group">
+            <input type="number" name="buscar_id" class="form-control" placeholder="Buscar por ID" value="<?php echo $idBusqueda; ?>">
+            <button type="submit" class="btn btn-secondary">Buscar</button>
+        </div>
+    </form>
 
     <?php
     // Mostrar el producto encontrado si existe

@@ -17,12 +17,12 @@
 
     <!-- Barra de búsqueda y filtros -->
     <div class="container nav-filters-container">
-        <div class="d-flex justify-content-between align-items-center">
-            <div class="search-container flex-grow-1 mr-3">
+        <div class="row justify-content-between align-items-center">
+            <div class="col-md-8 col-12 search-container mb-3 mb-md-0">
                 <input type="text" id="searchInput" class="search-input form-control" placeholder="Buscar producto por nombre..." onkeyup="searchProducts()">
             </div>
 
-            <div class="filters-container">
+            <div class="col-md-4 col-12 filters-container">
                 <label><input type="checkbox" id="csfloatFilter" onclick="searchProducts()"> CSFloat</label>
                 <label><input type="checkbox" id="bufFilter" onclick="searchProducts()"> BUF</label>
             </div>
@@ -31,12 +31,11 @@
 
     <div class="container">
         <div class="section-header">
-            <br></br>
             <h2>Todos los Productos</h2>
         </div>
         <div class="row product-section" id="productSection">
             {% for item in productos %}
-                <div class="col-md-4 product-card" data-category="{{ item.Categoria }}">
+                <div class="col-md-4 col-sm-6 col-12 product-card" data-category="{{ item.Categoria }}">
                     <div class="card">
                         <!-- Cargar la imagen desde la ruta local -->
                         <img src="{{ item.Imagen }}" class="card-img-top" alt="{{ item.Nombre }}">

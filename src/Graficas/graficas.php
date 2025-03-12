@@ -12,7 +12,7 @@ $usuarioAutenticado = null;
 if (isset($_COOKIE['token'])) {
     // Verificar el token JWT
     $usuarioData = verificarJWT($_COOKIE['token']);
-    
+
     if ($usuarioData) {
         // Obtener datos del usuario desde la base de datos
         $usuarioId = $usuarioData['id'];
@@ -49,7 +49,6 @@ foreach ($compras as $compra) {
     $promedio_precio[] = (float) $compra['promedio_precio'];
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -57,23 +56,22 @@ foreach ($compras as $compra) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gráficas de Compras</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets/css/graficas.css" rel="stylesheet">
 </head>
-<body>
+<body class="d-flex flex-column align-items-center justify-content-center min-vh-100 text-center">
+    <div class="container">
+        <h1 class="text-danger text-uppercase fw-bold text-shadow">Gráfico de Compras por Producto</h1>
 
-    <h1>Gráfico de Compras por Producto</h1>
-    
-    <p>
-        Este gráfico muestra el número total de compras realizadas por cada producto. 
-        Puede ser útil para visualizar qué productos están siendo más adquiridos en la tienda.
-    </p>
+        <p class="text-light">Este gráfico muestra el número total de compras realizadas por cada producto. Puede ser útil para visualizar qué productos están siendo más adquiridos en la tienda.</p>
 
-    <div class="chart-container">
-        <canvas id="comprasChart"></canvas>
-    </div>
+        <div class="chart-container p-4 rounded shadow-lg bg-dark">
+            <canvas id="comprasChart"></canvas>
+        </div>
 
-    <div class="text-center mt-5" style="margin-top: 30px;">
-        <a href="/" class="btn btn-danger btn-lg">Volver al Inicio</a>
+        <div class="text-center mt-5">
+            <a href="/" class="btn btn-danger btn-lg">Volver al Inicio</a>
+        </div>
     </div>
 
     <script>
@@ -96,28 +94,25 @@ foreach ($compras as $compra) {
             },
             options: {
                 responsive: true,
+                maintainAspectRatio: false,
                 scales: {
                     y: {
                         beginAtZero: true,
                         ticks: {
-                            font: { size: 16, family: "'Arial', sans-serif", weight: 'bold', color: '#b0b0b0' },
                             color: '#b0b0b0'
                         },
-                        grid: { color: '#b0b0b0' }
+                        grid: { color: '#444' }
                     },
                     x: {
                         ticks: {
-                            font: { size: 16, family: "'Arial', sans-serif", weight: 'bold', color: '#b0b0b0' },
                             color: '#b0b0b0'
                         },
-                        grid: { color: '#b0b0b0' }
+                        grid: { color: '#444' }
                     }
                 },
                 plugins: {
                     tooltip: {
                         backgroundColor: 'rgba(255, 0, 0, 0.8)',
-                        bodyFont: { size: 14, family: "'Arial', sans-serif", weight: 'bold', color: '#b0b0b0' },
-                        titleFont: { size: 16, family: "'Arial', sans-serif", weight: 'bold', color: '#b0b0b0' },
                         callbacks: {
                             afterBody: function(tooltipItem) {
                                 const index = tooltipItem[0].dataIndex;
@@ -130,5 +125,6 @@ foreach ($compras as $compra) {
         });
     </script>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

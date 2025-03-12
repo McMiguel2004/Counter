@@ -12,6 +12,8 @@ body {
 }
 .container {
     margin-top: 50px;
+    width: 100%;
+    max-width: 1200px; /* Limitar el ancho máximo */
 }
 h1 {
     color: #ff5f57; /* Rojo neón */
@@ -36,7 +38,7 @@ h1 {
 }
 .btn-primary:hover {
     background-color:  #ff4d4d;
-    border-color:  #ff4d4d;
+    border-color: #ff4d4d;
 }
 
 .text-center a {
@@ -47,6 +49,7 @@ h1 {
     color: white;
     text-decoration: none;
 }
+
 input[name="buscar_id"] {
     color: white;
     background-color: #444;  /* Fondo más claro */
@@ -60,4 +63,38 @@ input[name="buscar_id"]::placeholder {
 input {
     color: white !important;
     background-color: #444;  /* Si también deseas que el fondo sea oscuro */
+}
+
+/* Media Queries para adaptabilidad */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .table td, .table th {
+        padding: 8px;
+    }
+
+    .form-control, .btn {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .form-control, .btn {
+        font-size: 0.8rem;
+    }
+
+    .text-center a {
+        font-size: 16px;
+        padding: 8px 20px;
+    }
 }

@@ -20,10 +20,6 @@ h2 {
     text-shadow: 0 0 10px rgba(255, 95, 87, 0.7), 0 0 20px rgba(255, 95, 87, 0.7); /* Efecto de neón rojo */
 }
 
-.section-header {
-    margin-bottom: 30px;
-}
-
 /* Estilo para las tarjetas */
 .card {
     border-radius: 15px;
@@ -32,10 +28,6 @@ h2 {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 15px rgba(255, 76, 76, 0.5);
-}
 .card-img-top {
     height: auto;
     width: 100%;
@@ -82,44 +74,6 @@ h2 {
     margin-bottom: 30px;
 }
 
-.buf-section {
-    background-color: rgba(42, 45, 62, 0.9); /* Fondo oscuro con toque metálico */
-    padding: 30px;
-    border-radius: 15px;
-    margin-bottom: 30px;
-}
-
-.product-section {
-    margin-bottom: 40px;
-}
-
-.col-md-4 {
-    margin-bottom: 30px;
-}
-
-/* Estilos para el botón de volver atrás */
-.btn-back {
-    padding: 12px 30px;
-    font-size: 1.1rem;
-    border-radius: 8px;
-    background-color: #dc3545; 
-    color: white;
-    text-decoration: none;
-    width: 250px;
-    text-align: center;
-    box-shadow: 0 0 10px rgba(255, 95, 87, 0.3); 
-}
-
-.btn-back:hover {
-    background-color: #ff1a1a;
-    box-shadow: 0 6px 12px rgba(255, 26, 26, 0.5);
-    cursor: pointer;
-}
-
-.btn-back:focus {
-    outline: none;
-}
-
 /* Estilo del buscador */
 .search-container {
     text-align: center;
@@ -127,12 +81,12 @@ h2 {
 }
 
 .search-input {
-    width: 50%;
+    width: 100%;
     padding: 10px;
     font-size: 1.1rem;
     border-radius: 5px;
-    border: 2px solid #ff4c4c; /* Borde rojo */
-    background-color: rgba(42, 45, 62, 0.9); /* Fondo oscuro con toque metálico */
+    border: 2px solid #ff4c4c;
+    background-color: #333;
     color: #fff;
 }
 
@@ -149,7 +103,6 @@ h2 {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-/* Filtros */
 .filters-container {
     display: flex;
     flex-direction: column;
@@ -164,7 +117,6 @@ h2 {
     cursor: pointer;
 }
 
-/* Diseño de las casillas de verificación */
 .filters-container input[type="checkbox"] {
     margin-right: 10px;
     accent-color: #ff4c4c; /* Color rojo personalizado para las casillas */
@@ -174,52 +126,28 @@ h2 {
     background-color: #ff4c4c;
 }
 
-/* Estilo para los elementos dentro de los filtros cuando están seleccionados */
 .filters-container input[type="checkbox"]:checked + label {
     color: #ff4c4c;
     font-weight: bold;
 }
 
-/* Barra de búsqueda */
-.search-container {
-    flex-grow: 1;
-    margin-right: 20px;
-}
-
-.search-input {
-    width: 100%;
-    padding: 10px;
-    font-size: 1.1rem;
-    border-radius: 5px;
-    border: 2px solid #ff4c4c;
-    background-color: #333;
-    color: #fff;
-    transition: border-color 0.3s ease;
-}
-
-.search-input:focus {
-    border-color: #ff1a1a;
-    outline: none;
-}
-
-.search-input::placeholder {
-    color: #b3b3b3;
-}
-
-/* Espaciado entre los filtros y la búsqueda */
-.nav-filters-container .d-flex {
-    gap: 20px;
-}
-
-/* Estilo para pantallas pequeñas */
+/* Media Queries para Responsividad */
 @media (max-width: 768px) {
-    /* Hacer los filtros más compactos en pantallas pequeñas */
+    /* Ajustar el comportamiento de la barra de búsqueda y filtros */
     .filters-container {
         flex-direction: row;
         gap: 15px;
+        margin-bottom: 15px;
     }
+    .product-card {
+        margin-bottom: 15px;
+    }
+}
 
-    .search-input {
-        width: 80%;
+@media (max-width: 576px) {
+    /* Ajustar las tarjetas a una columna */
+    .product-card {
+        flex: 0 0 100%;
+        max-width: 100%;
     }
 }
