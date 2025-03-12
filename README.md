@@ -16,7 +16,7 @@ Este es un proyecto de página web dinámica en PHP que permite gestionar, visua
 ## Estructura del Proyecto
 
 La estructura del proyecto es la siguiente:
-
+'''bash
 Counter/
 ├── src/
 │   ├── Graficas/
@@ -49,4 +49,4 @@ Counter/
 ├── api/
 │   └── auth.php
 └── vendor
-
+'''
