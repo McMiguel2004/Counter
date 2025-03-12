@@ -50,41 +50,7 @@ El objetivo de esta práctica es desarrollar una página web dinámica en PHP qu
 ### 🔄 Gestión de Sesiones y Cookies
 - Implementación de sesiones y cookies para mantener la autenticación.
 - Permite la persistencia de la sesión incluso tras cerrar el navegador.
-
----
-
-## 📂 Estructura del Proyecto
-```
-/var/www/proyecto
-├── assets/
-│   ├── css/
-│   ├── js/
-│   └── img/
-├── api/
-│   ├── auth.php
-│   ├── data.php
-│   └── scraping.php
-├── includes/
-│   ├── db.php
-│   ├── jwt.php
-│   ├── functions.php
-│   └── routes.php
-├── templates/
-│   ├── base.twig
-│   ├── home.twig
-│   ├── admin.twig
-│   └── login.twig
-├── scripts/
-│   └── scraper.py
-├── index.php
-├── admin.php
-├── login.php
-├── README.md
-└── .env
-```
-
----
-
+  
 ## 🛠️ Instalación y Configuración
 
 ### 1️⃣ Clonar el Repositorio
