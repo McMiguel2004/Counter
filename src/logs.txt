@@ -1,0 +1,7 @@
+[2025-03-06 17:12:55] ℹ️ [INFO] No se cambió el idioma. Se mantiene 'es_ES'.
+[2025-03-06 17:12:55] ⚠️ [ERROR] No se encontró el archivo de traducción en '/var/www/Counter/src/locales/es_ES/LC_MESSAGES/messages.mo'
+[2025-03-06 17:12:55] ✅ [SUCCESS] Usuario autenticado: Rubensito
+[2025-03-10 15:15:40] ℹ️ [INFO] No se cambió el idioma. Se mantiene 'es_ES'.
+[2025-03-10 15:15:40] ⚠️ [ERROR] No se encontró el archivo de traducción en '/var/www/Counter/src/locales/es_ES/LC_MESSAGES/messages.mo'
+[2025-03-10 15:29:20] ℹ️ [INFO] No se cambió el idioma. Se mantiene 'es_ES'.
+[2025-03-10 15:29:20] ⚠️ [ERROR] No se encontró el archivo de traducción en '/var/www/Counter/src/locales/es_ES/LC_MESSAGES/messages.mo'

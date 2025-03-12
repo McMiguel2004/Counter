@@ -1,0 +1,106 @@
+/* Reseteo de márgenes y paddings para todo el body */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo general del body */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #1d1f26, #2a2d3e); /* Fondo metálico */
+    color: #ccc; /* Texto claro */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Asegura que ocupe toda la pantalla */
+    padding: 20px;
+    text-align: center;
+}
+
+/* Título principal */
+h1 {
+    color: #ff5f57; /* Rojo neón */
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-shadow: 0 0 10px rgba(255, 95, 87, 0.7), 0 0 20px rgba(255, 95, 87, 0.7); /* Efecto de neón rojo */
+}
+
+/* Párrafo con descripción */
+p {
+    color: #b0b0b0; /* Texto gris claro */
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin-bottom: 40px;
+}
+
+/* Contenedor principal del gráfico */
+.container {
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+}
+
+/* Estilo para el canvas del gráfico */
+canvas {
+    width: 100% !important; /* El ancho del canvas se ajusta al contenedor */
+    height: auto !important; /* La altura se ajusta proporcionalmente */
+    max-width: 800px; /* El gráfico no puede ser más grande que este tamaño */
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(255, 95, 87, 0.2), 0 0 30px rgba(255, 95, 87, 0.3); /* Efecto de luz de neón rojo */
+    background-color: #222; /* Fondo oscuro del gráfico */
+    border: 1px solid #333; /* Borde oscuro */
+}
+
+/* Contenedor con sombra y fondo oscuro */
+.chart-container {
+    background-color: #2a2d3e; /* Fondo oscuro con toque metálico */
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(255, 95, 87, 0.2), 0 0 40px rgba(255, 95, 87, 0.3); /* Sombra con luz de neón rojo */
+    max-width: 900px;
+    width: 100%;
+}
+
+/* Agregar un borde o sombra adicional al contenedor */
+.chart-container:hover {
+    box-shadow: 0 0 30px rgba(255, 95, 87, 0.5), 0 0 50px rgba(255, 95, 87, 0.6);
+}
+
+/* Animación de entrada en el gráfico */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+canvas {
+    animation: fadeIn 1.5s ease-out;
+}
+
+/* Estilo para el botón de volver al inicio */
+.text-center {
+    margin-top: 60px; /* Se baja el botón un poco más */
+}
+
+.text-center a {
+    padding: 10px 30px;
+    font-size: 18px;
+    border-radius: 8px;
+    background-color: #dc3545; /* Rojo */
+    color: white;
+    text-decoration: none;
+    margin-top: 30px;
+}
+
+.text-center a:hover {
+    background-color: #c0392b; /* Rojo más oscuro al pasar el mouse */
+}

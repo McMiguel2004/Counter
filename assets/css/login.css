@@ -1,0 +1,111 @@
+/* Reseteo de márgenes y paddings para todo el body */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo general del body */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #1d1f26, #2a2d3e); /* Fondo metálico */
+    color: #ccc; /* Texto claro */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Asegura que ocupe toda la pantalla */
+    padding: 20px;
+}
+
+/* Estilo de la tarjeta de inicio de sesión */
+.card {
+    background-color: rgba(42, 45, 62, 0.9); /* Fondo oscuro con toque metálico */
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(255, 95, 87, 0.2), 0 0 40px rgba(255, 95, 87, 0.3); /* Sombra con luz de neón rojo */
+    width: 120%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+/* Estilo para el encabezado de la tarjeta */
+.card-title {
+    color: #ff5f57; /* Rojo neón */
+    font-size: 2rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-shadow: 0 0 10px rgba(255, 95, 87, 0.7), 0 0 20px rgba(255, 95, 87, 0.7); /* Efecto de neón rojo */
+}
+
+/* Estilo de los formularios */
+.form-label {
+    font-size: 1.1rem;
+    color: #ccc;
+}
+
+.form-control {
+    background-color: #222; /* Fondo oscuro del campo de entrada */
+    border: 1px solid #444; /* Borde oscuro */
+    color: #ccc;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.form-control:focus {
+    background-color: #333;
+    border-color: #ff5f57; /* Borde rojo neón */
+    box-shadow: 0 0 5px rgba(255, 95, 87, 0.7);
+}
+
+/* Estilo de los botones */
+.btn-primary {
+    background-color: #dc3545; /* Rojo */
+    border: none;
+    padding: 10px;
+    font-size: 1.2rem;
+    width: 100%;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #c0392b; /* Rojo más oscuro al pasar el mouse */
+}
+
+/* Estilo de los mensajes de error */
+.alert {
+    background-color: #c0392b; /* Rojo de error */
+    color: white;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    padding: 10px;
+    font-size: 1rem;
+}
+
+/* Estilo para el link de registro */
+.text-center a {
+    color: #ff5f57; /* Color del enlace (rojo neón) */
+    font-size: 18px;
+    text-decoration: none; /* Elimina el subrayado por defecto */
+    padding: 5px 0;
+    
+    transition: color 0.3s, text-shadow 0.3s; /* Efecto de transición */
+}
+
+.text-center a:hover {
+    color: #c0392b; /* Color más oscuro al pasar el mouse */
+    text-shadow: 0 0 10px rgba(255, 95, 87, 0.7); /* Efecto de neón al pasar el mouse */
+}
+
+
+/* Contenedor general para centrar el formulario */
+.container {
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+}
+
+

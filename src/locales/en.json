@@ -1,0 +1,14 @@
+{
+    "auth": "Authentication",
+    "welcome": "Welcome, ",
+    "welcome_guest": "Welcome, guest",
+    "logout": "Log out",
+    "view_products": "View Products",
+    "view_charts": "View Charts",
+    "modify_products": "Modify Products",
+    "login": "Login",
+    "register": "Register",
+    "please_login": "Please log in to access the features of the page",
+    "spanish": "Español",
+    "english": "English"
+}

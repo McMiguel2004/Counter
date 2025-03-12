@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/css/productos.css" rel="stylesheet">
+</head>
+<body>
+
+   <!-- Botón para volver atrás -->
+<div class="mt-4 text-center">
+    <button class="btn-back btn btn-primary" onclick="window.location.href = '/'">Home</button>
+</div>
+
+    <!-- Barra de búsqueda y filtros -->
+    <div class="container nav-filters-container">
+        <div class="d-flex justify-content-between align-items-center">
+            <div class="search-container flex-grow-1 mr-3">
+                <input type="text" id="searchInput" class="search-input form-control" placeholder="Buscar producto por nombre..." onkeyup="searchProducts()">
+            </div>
+
+            <div class="filters-container">
+                <label><input type="checkbox" id="csfloatFilter" onclick="searchProducts()"> CSFloat</label>
+                <label><input type="checkbox" id="bufFilter" onclick="searchProducts()"> BUF</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="section-header">
+            <br></br>
+            <h2>Todos los Productos</h2>
+        </div>
+        <div class="row product-section" id="productSection">
+            {% for item in productos %}
+                <div class="col-md-4 product-card" data-category="{{ item.Categoria }}">
+                    <div class="card">
+                        <!-- Cargar la imagen desde la ruta local -->
+                        <img src="{{ item.Imagen }}" class="card-img-top" alt="{{ item.Nombre }}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ item.Nombre }}</h5>
+                            <p class="card-text"><strong>Precio:</strong> ${{ item.Precio }}</p>
+                            <p class="card-text"><strong>Estado:</strong> {{ item.Estado }}</p>
+                            <p class="card-text"><strong>Float:</strong> {{ item.PrecisionValue }}</p>
+                            <p class="card-text"><strong>Página:</strong> {{ item.PaginaNombre }}</p>
+                            <a href="{{ item.PaginaUrl }}" target="_blank" class="btn btn-link">Ver más</a>
+
+                            {% if usuarioAutenticado %}
+                               <form action="/comprar" method="POST">
+                                    <input type="hidden" name="productoId" value="{{ item.Id }}">
+                                    <input type="hidden" name="nombreProducto" value="{{ item.Nombre }}">
+                                    <input type="hidden" name="precioProducto" value="{{ item.Precio }}">
+                                    <input type="hidden" name="cantidad" value="1"> 
+                                    <button type="submit" class="btn btn-success">Comprar</button>
+                                </form>
+                            {% else %}
+                                <p class="text-warning">Debes estar logueado para comprar.</p>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Script para buscar productos -->
+    <script>
+        function searchProducts() {
+            var input, filter, productSection, productCards, cardTitle, i, txtValue;
+            var csfloatChecked = document.getElementById('csfloatFilter').checked;
+            var bufChecked = document.getElementById('bufFilter').checked;
+            
+            input = document.getElementById('searchInput');
+            filter = input.value.toLowerCase();
+            productSection = document.getElementById("productSection");
+
+            productCards = productSection.getElementsByClassName('product-card');
+            for (i = 0; i < productCards.length; i++) {
+                cardTitle = productCards[i].getElementsByClassName("card-title")[0];
+                txtValue = cardTitle.textContent || cardTitle.innerText;
+                
+                var category = productCards[i].getAttribute('data-category').toLowerCase();
+                var show = true;
+
+                if (txtValue.toLowerCase().indexOf(filter) === -1) {
+                    show = false;
+                }
+
+                if (csfloatChecked && category !== 'csfloat') {
+                    show = false;
+                }
+
+                if (bufChecked && category !== 'buf') {
+                    show = false;
+                }
+
+                productCards[i].style.display = show ? "" : "none";
+            }
+        }
+    </script>
+
+</body>
+</html>

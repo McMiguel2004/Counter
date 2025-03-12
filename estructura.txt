@@ -1,0 +1,9 @@
+/counter
+├── db/
+│   └── conexion.php
+├── api/
+│   └── auth.php
+├── includes/
+│   └── jwt.php
+│   └── funciones.php
+└── index.php

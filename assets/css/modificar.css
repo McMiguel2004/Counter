@@ -1,0 +1,63 @@
+/* Temática gamer: colores vibrantes y fondo oscuro */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #1d1f26, #2a2d3e); /* Fondo metálico */
+    color: #ccc; /* Texto claro */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Asegura que ocupe toda la pantalla */
+    padding: 20px;
+}
+.container {
+    margin-top: 50px;
+}
+h1 {
+    color: #ff5f57; /* Rojo neón */
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-shadow: 0 0 10px rgba(255, 95, 87, 0.7), 0 0 20px rgba(255, 95, 87, 0.7); /* Efecto de neón rojo */
+    text-align: center;
+}
+.form-control, .btn {
+    background-color: #333;
+    border: 1px solid #444;
+    color: #fff;
+}
+.form-control:focus, .btn:hover {
+    background-color: #555;
+    border-color: #666;
+}
+.btn-primary {
+    background-color:  #ff4d4d;
+    border-color:  #ff4d4d;
+}
+.btn-primary:hover {
+    background-color:  #ff4d4d;
+    border-color:  #ff4d4d;
+}
+
+.text-center a {
+    padding: 10px 30px;
+    font-size: 18px;
+    border-radius: 8px;
+    background-color: #dc3545; /* Rojo */
+    color: white;
+    text-decoration: none;
+}
+input[name="buscar_id"] {
+    color: white;
+    background-color: #444;  /* Fondo más claro */
+    border: 1px solid #888;   /* Borde más visible */
+}
+
+input[name="buscar_id"]::placeholder {
+    color: white;
+}
+
+input {
+    color: white !important;
+    background-color: #444;  /* Si también deseas que el fondo sea oscuro */
+}
