@@ -1,13 +1,30 @@
-Counter
+# Counter
 
-   
+## Descripción del Proyecto
 
-📌 Descripción
+Counter es una aplicación web dinámica desarrollada en PHP que permite gestionar, visualizar y editar datos extraídos mediante web scraping con Selenium en Python. El proyecto incluye autenticación segura con JWT, un panel de administración protegido y soporte multilenguaje.
 
-Counter es una aplicación web dinámica desarrollada en PHP que permite la gestión, visualización y edición de datos extraídos mediante web scraping con Selenium y Python. El proyecto incluye autenticación segura con JWT, un panel de administración protegido y soporte para múltiples idiomas.
+## Características Principales
 
-📁 Estructura del Proyecto
+- **Front-end moderno** con Bootstrap y sistema de plantillas TWIG.
+- **Scraping de datos** mediante Selenium en Python.
+- **Gráficas interactivas** con librerías como Chart.js o D3.js.
+- **Geolocalización** con Google Maps o OpenStreetMap.
+- **Sistema de routing** en PHP para organizar las rutas de la aplicación.
+- **Panel de administración** protegido con JWT.
+- **Internacionalización** con gettext (español/inglés).
+- **Gestón de sesiones y cookies** para mantener la sesión abierta.
 
+## Tecnologías Utilizadas
+
+- **Back-end**: PHP, MySQL, JWT
+- **Front-end**: Bootstrap, TWIG, JavaScript
+- **Scraping**: Python, Selenium
+- **Gráficas y mapas**: Chart.js, D3.js, Google Maps API, OpenStreetMap
+
+## Estructura del Proyecto
+
+```
 Counter/
 ├── src/
 │   ├── Graficas/
@@ -40,78 +57,77 @@ Counter/
 ├── api/
 │   └── auth.php
 └── vendor/
+```
 
-🚀 Funcionalidades Principales
+## Instalación y Configuración
 
-✅ Autenticación con JWT: Inicio de sesión seguro con persistencia de sesión mediante cookies y sesiones.
-✅ Scraping con Selenium y Python: Extracción automatizada de datos desde una web pública.
-✅ Internacionalización: Soporte para múltiples idiomas (Español e Inglés).
-✅ Panel de Administración: Gestión de datos scrapeados con control de usuarios autenticados.
-✅ Front-end moderno: Implementado con Bootstrap y Twig para un diseño responsive y dinámico.
-✅ Gráficos y visualización: Integración de gráficos dinámicos con Chart.js u otra librería similar.
+### Requisitos Previos
 
-🛠️ Tecnologías Utilizadas
+- PHP 8+
+- MySQL
+- Composer
+- Node.js (para dependencias del front-end)
+- Python 3+ con Selenium instalado
 
-Back-end: PHP 8, JWT para autenticación.
+### Instalación
 
-Front-end: Bootstrap 5, Twig para plantillas dinámicas.
+1. Clonar el repositorio:
+   ```bash
+   git clone https://github.com/McMiguel2004/Counter.git
+   cd Counter
+   ```
 
-Base de datos: MySQL.
+2. Instalar dependencias de PHP:
+   ```bash
+   composer install
+   ```
 
-Scraping: Python con Selenium.
+3. Instalar dependencias del front-end:
+   ```bash
+   npm install
+   ```
 
-Internacionalización: JSON y gettext.
+4. Configurar la base de datos:
+   - Crear una base de datos en MySQL.
+   - Importar el archivo `database.sql` en MySQL.
 
-Gráficos: Chart.js, GoogleMaps, OpenStreetMap.
+5. Configurar el entorno:
+   - Copiar el archivo `.env.example` a `.env` y configurar las credenciales.
 
-⚙️ Instalación y Configuración
+6. Configurar Selenium:
+   - Instalar Selenium con pip:
+     ```bash
+     pip install selenium
+     ```
+   - Descargar el WebDriver correspondiente a tu navegador.
 
-📌 Requisitos Previos
+7. Iniciar el servidor:
+   ```bash
+   php -S localhost:8000 -t public/
+   ```
 
-PHP 8.0+
+## Uso del Proyecto
 
-Composer
+### Autenticación
+- Registro de usuarios: `/src/Sesion/registrar.php`
+- Inicio de sesión: `/src/Sesion/login.php`
+- Cierre de sesión: `/src/Sesion/logout.php`
 
-MySQL
+### Scraping de Datos
+Ejecutar el script en Python para extraer datos:
+```bash
+python scripts/scraping.py
+```
 
-Python 3 y Selenium
+### Administración
+Acceso al panel de administración para modificar los datos scrapeados: `/src/Panel/Modificar-productos.php`
 
-Servidor web (Apache o Nginx)
+## Contribución
+Si deseas contribuir, por favor realiza un fork del repositorio y envía un pull request con tus mejoras.
 
-📥 Instalación
+## Licencia
+Este proyecto está bajo la licencia MIT. Para más información, consulta el archivo `LICENSE`.
 
-Clona el repositorio:
-
-git clone https://github.com/McMiguel2004/Counter.git
-cd Counter
-
-Instala las dependencias de PHP:
-
-composer install
-
-Configura la base de datos en db/conexion.php.
-
-Configura las claves JWT en includes/jwt.php.
-
-Ejecuta el script de scraping en Python:
-
-python scraping.py
-
-Inicia el servidor web y accede a http://localhost/counter.
-
-🔒 Seguridad
-
-🔹 Uso de JWT para autenticación segura.
-🔹 Restricción de acceso al panel de administración.
-🔹 Gestión segura de sesiones y cookies.
-
-📜 Licencia
-
-Este proyecto está bajo la licencia MIT. Puedes ver más detalles en el archivo LICENSE.
-
-✉️ Contacto
-
-Proyecto desarrollado por McMiguel2004. Para dudas o sugerencias, abre un issue o contáctame directamente.
-
-🚀 ¡Disfruta usando Counter! 🎮
-
+## Autor
+**McMiguel2004**
+GitHub: [McMiguel2004](https://github.com/McMiguel2004)
