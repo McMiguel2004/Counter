@@ -1,6 +1,6 @@
 Counter
 
-  
+   
 
 📌 Descripción
 
@@ -43,17 +43,12 @@ Counter/
 
 🚀 Funcionalidades Principales
 
-Autenticación con JWT: Inicio de sesión seguro con persistencia de sesión mediante cookies y sesiones.
-
-Scraping con Selenium y Python: Extracción automatizada de datos desde una web pública.
-
-Internacionalización: Soporte para múltiples idiomas (Español e Inglés).
-
-Panel de Administración: Gestión de datos scrapeados con control de usuarios autenticados.
-
-Front-end moderno: Implementado con Bootstrap y Twig para un diseño responsive y dinámico.
-
-Gráficos y visualización: Integración de gráficos dinámicos con Chart.js u otra librería similar.
+✅ Autenticación con JWT: Inicio de sesión seguro con persistencia de sesión mediante cookies y sesiones.
+✅ Scraping con Selenium y Python: Extracción automatizada de datos desde una web pública.
+✅ Internacionalización: Soporte para múltiples idiomas (Español e Inglés).
+✅ Panel de Administración: Gestión de datos scrapeados con control de usuarios autenticados.
+✅ Front-end moderno: Implementado con Bootstrap y Twig para un diseño responsive y dinámico.
+✅ Gráficos y visualización: Integración de gráficos dinámicos con Chart.js u otra librería similar.
 
 🛠️ Tecnologías Utilizadas
 
@@ -106,11 +101,9 @@ Inicia el servidor web y accede a http://localhost/counter.
 
 🔒 Seguridad
 
-Uso de JWT para autenticación.
-
-Restricción de acceso al panel de administración.
-
-Gestión segura de sesiones y cookies.
+🔹 Uso de JWT para autenticación segura.
+🔹 Restricción de acceso al panel de administración.
+🔹 Gestión segura de sesiones y cookies.
 
 📜 Licencia
 
@@ -119,4 +112,6 @@ Este proyecto está bajo la licencia MIT. Puedes ver más detalles en el archivo
 ✉️ Contacto
 
 Proyecto desarrollado por McMiguel2004. Para dudas o sugerencias, abre un issue o contáctame directamente.
+
+🚀 ¡Disfruta usando Counter! 🎮
 
